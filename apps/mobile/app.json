@@ -1,0 +1,14 @@
+
+{
+  "expo": {
+    "name": "BuildTrace Validation",
+    "slug": "buildtrace-validation",
+    "version": "0.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
+}

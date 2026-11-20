@@ -7,5 +7,12 @@
   "packageManager": "pnpm@12.22.0",
   "engines": {
     "node": ">=26.13.1 <27"
+  },
+  "scripts": {
+    "build:contracts": "pnpm --filter @buildtrace/contracts build",
+    "typecheck:contracts": "pnpm --filter @buildtrace/contracts typecheck",
+    "build:api": "pnpm run build:contracts && pnpm --filter @buildtrace/api build",
+    "typecheck:api": "pnpm run build:contracts && pnpm --filter @buildtrace/api typecheck",
+    "validate:api": "pnpm run typecheck:contracts && pnpm run build:api"
   }
 }

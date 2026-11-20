@@ -1,4 +1,3 @@
-
 import type { HealthResponse } from "@buildtrace/contracts";
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";

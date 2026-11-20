@@ -1,15 +1,18 @@
 
+import type { HealthResponse } from "@buildtrace/contracts";
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 
 const app = new Hono();
 
 app.get("/health", (context) => {
-  return context.json({
+  const response: HealthResponse = {
     status: "ok",
     service: "buildtrace-api",
     timestamp: new Date().toISOString(),
-  });
+  };
+
+  return context.json(response);
 });
 
 const portValue = process.env.PORT ?? "3001";

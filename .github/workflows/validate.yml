@@ -1,0 +1,24 @@
+name: Workspace Validation
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    name: Typecheck and API build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up pnpm and Node.js
+        uses: pnpm/setup@v3
+        with:
+          install: false
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Typecheck workspace
+        run: pnpm run validate:types
+      - name: Build API
+        run: pnpm run build:api

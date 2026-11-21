@@ -12,6 +12,9 @@
     "typecheck:contracts": "pnpm --filter @buildtrace/contracts typecheck",
     "build:api": "pnpm run build:contracts && pnpm --filter @buildtrace/api build",
     "typecheck:api": "pnpm run build:contracts && pnpm --filter @buildtrace/api typecheck",
+    "typecheck:web": "pnpm --filter @buildtrace/web typecheck",
+    "typecheck:mobile": "pnpm --filter @buildtrace/mobile typecheck",
+    "validate:types": "pnpm run typecheck:contracts && pnpm run typecheck:api && pnpm run typecheck:web && pnpm run typecheck:mobile",
     "validate:api": "pnpm run typecheck:contracts && pnpm run build:api"
   }
 }
